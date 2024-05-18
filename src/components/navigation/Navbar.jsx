@@ -8,10 +8,10 @@ export default function Navbar() {
 			</a>
 			<ul>
 				<li>
-					<a href="/faq">FAQ</a>
+					<a href="/faq">Ko ste vi?</a>
 				</li>
 				<li>
-					<a href="/location">DI ŠTO KAD</a>
+					<a href="/location">Di, kad?</a>
 				</li>
 			</ul>
 		</nav>

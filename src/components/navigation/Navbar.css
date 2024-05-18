@@ -1,3 +1,26 @@
 .nav {
-    background-color: var(--gold)
+	background-color: var(--gold);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--text);
+	padding: 0 1rem;
+	font-family: Handwriting;
+}
+
+.site_name {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.nav a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.nav ul {
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+	font-size: 1.5rem;
 }
