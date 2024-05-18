@@ -1,0 +1,13 @@
+:root {
+	--gold: #ffd700;
+	--green: #808000;
+	--beige: #f5f5dc;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+}

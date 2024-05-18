@@ -1,3 +1,5 @@
+import "./Navbar.css";
+
 export default function Navbar() {
 	return (
 		<nav className="nav">
@@ -5,8 +7,12 @@ export default function Navbar() {
 				A&A
 			</a>
 			<ul>
-				<li>FAQ</li>
-				<li>DI? ŠTO? KAD?</li>
+				<li>
+					<a href="/faq">FAQ</a>
+				</li>
+				<li>
+					<a href="/location">DI ŠTO KAD</a>
+				</li>
 			</ul>
 		</nav>
 	);
