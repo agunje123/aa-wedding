@@ -1,3 +1,5 @@
+import Map from "../map/Map";
+
 export default function Location() {
-	return <h1>Lokacija</h1>;
+	return <Map></Map>
 }
