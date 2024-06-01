@@ -1,11 +1,17 @@
 .nav {
-	background-color: var(--gold);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	color: var(--text);
 	padding: 0 1rem;
 	font-family: Handwriting;
+	position: sticky;
+	top: 0;
+	transition: all 0.5s;
+}
+
+.nav-bg {
+	background-color: var(--gold);
 }
 
 .site_name {

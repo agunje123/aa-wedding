@@ -7,5 +7,9 @@
 	background-image: url(src/assets/background.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-    color: white;
+	color: white;
+}
+
+.dummyData {
+	height: 9000px;
 }
