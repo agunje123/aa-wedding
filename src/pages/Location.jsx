@@ -1,6 +1,6 @@
 import Map from "../components/map/Map";
 
-import "./Location.css";
+import "./styles/Location.css";
 
 export default function Location() {
 	return (
