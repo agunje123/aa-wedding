@@ -5,7 +5,7 @@ import "./styles/Location.css";
 export default function Location() {
 	return (
 		<>
-			<div className="stepper">
+			<div className="stepper" id="location">
 				<div>icon 1</div>
 				---
 				<div>icon 2</div>

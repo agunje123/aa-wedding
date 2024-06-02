@@ -16,13 +16,45 @@ export default function Navbar() {
 
 	return (
 		<nav className={color ? "nav nav-bg" : "nav"}>
-			<div className="site_name">A&A</div>
+			<div
+				className="site_name"
+				onClick={() => {
+					const home = document.querySelector("#home");
+					home.scrollIntoView({
+						behavior: "smooth",
+						block: "center",
+					});
+				}}
+			>
+				A&A
+			</div>
 			<ul>
 				<li>
-					<div>Ko ste vi?</div>
+					<div
+						onClick={() => {
+							const about = document.querySelector("#about");
+							about.scrollIntoView({
+								behavior: "smooth",
+								block: "center",
+							});
+						}}
+					>
+						Ko ste vi?
+					</div>
 				</li>
 				<li>
-					<div>Di, kad?</div>
+					<div
+						onClick={() => {
+							const location =
+								document.querySelector("#location");
+							location.scrollIntoView({
+								behavior: "smooth",
+								block: "center",
+							});
+						}}
+					>
+						Di, kad?
+					</div>
 				</li>
 			</ul>
 		</nav>
