@@ -16,7 +16,7 @@ export default function Navbar() {
 
 	return (
 		<nav className={color ? "nav nav-bg" : "nav"}>
-			<div>A&A</div>
+			<div className="site_name">A&A</div>
 			<ul>
 				<li>
 					<div>Ko ste vi?</div>
