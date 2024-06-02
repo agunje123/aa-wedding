@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./Navbar.css";
 
@@ -17,15 +16,13 @@ export default function Navbar() {
 
 	return (
 		<nav className={color ? "nav nav-bg" : "nav"}>
-			<Link to="/" className="site_name">
-				A&A
-			</Link>
+			<div>A&A</div>
 			<ul>
 				<li>
-					<Link to="/about">Ko ste vi?</Link>
+					<div>Ko ste vi?</div>
 				</li>
 				<li>
-					<Link to="/location">Di, kad?</Link>
+					<div>Di, kad?</div>
 				</li>
 			</ul>
 		</nav>
