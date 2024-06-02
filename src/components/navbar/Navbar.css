@@ -21,11 +21,7 @@
 .site_name {
 	font-size: 2rem;
 	font-weight: bold;
-}
-
-.nav a {
-	color: inherit;
-	text-decoration: none;
+	cursor: pointer;
 }
 
 .nav ul {
@@ -33,4 +29,8 @@
 	display: flex;
 	gap: 1rem;
 	font-size: 1.5rem;
+}
+
+.nav li {
+	cursor: pointer;
 }
