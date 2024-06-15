@@ -14,8 +14,8 @@
 }
 
 .nav-bg {
-	background-color: var(--gold);
-	color: var(--text);
+	background-color: var(--background);
+	color: var(--beige);
 }
 
 .site_name {

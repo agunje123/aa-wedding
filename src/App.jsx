@@ -5,6 +5,9 @@ import About from "./pages/About";
 import Location from "./pages/Location";
 
 function App() {
+	document.body.style =
+		"background-color: var(--background); color: var(--beige)";
+
 	return (
 		<>
 			<Navbar />

@@ -5,10 +5,9 @@
 }
 
 :root {
-	--gold: #ffd700;
-	--green: #808000;
+	--background: #556342;
+	--accent: #effa8a;
 	--beige: #f5f5dc;
-	--text: black;
 }
 
 * {
