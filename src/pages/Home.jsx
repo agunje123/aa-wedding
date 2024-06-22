@@ -7,11 +7,11 @@ export default function Home() {
 			<section className="welcome" id="home">
 				<div className="background"></div>
 				<div className="title">
-					<p>Antonija & Andrija</p>
-					<p>25. 4. 2025.</p>
-					<p>
+					<h1>Antonija & Andrija</h1>
+					<span>25. 4. 2025.</span>
+					<span>
 						<Timer />
-					</p>
+					</span>
 				</div>
 			</section>
 		</>

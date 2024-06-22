@@ -1,15 +1,19 @@
 .background {
-	width: 65vw;
+	width: 75%;
+	margin: 2rem;
 	background-image: url(src/assets/background.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 
+h1 {
+	font-size: 5vw;
+	margin: 0px;
+	text-align: center;
+}
+
 .title {
-	font-size: 4rem;
-	font-family: Handwriting;
-	font-weight: bold;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -22,27 +26,21 @@
 	display: flex;
 }
 
-/* Tablet screens */
+/* Responsive */
 @media (max-width: 768px) {
+	h1 {
+		font-size: 10vw;
+	}
 	.welcome {
 		display: block;
 	}
 	.background {
+		margin: 0rem;
 		height: 70vh;
 		width: 100vw;
 	}
 	.title {
 		height: 30vh;
 		width: 100vw;
-	}
-}
-
-/* Mobile screens */
-@media (max-width: 480px) {
-	.background {
-		height: 50vh;
-	}
-	.title {
-		height: 50vh;
 	}
 }
