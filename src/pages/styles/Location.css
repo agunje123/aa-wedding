@@ -6,3 +6,8 @@
 	padding: 2rem;
 	cursor: pointer;
 }
+
+.map {
+	display: flex;
+	justify-content: center
+}

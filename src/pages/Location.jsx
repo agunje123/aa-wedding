@@ -12,7 +12,9 @@ export default function Location() {
 				---
 				<div>icon 3</div>
 			</div>
-			<Map />
+			<div className="map">
+				<Map />
+			</div>
 		</>
 	);
 }
