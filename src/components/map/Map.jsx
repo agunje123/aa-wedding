@@ -25,38 +25,29 @@ const markers = [
 	},
 ];
 
-function MapPan({ position, onPanComplete }) {
+function MapPan({ position }) {
 	const map = useMap();
 
 	useEffect(() => {
 		map.setView(position, map.getZoom(), { animate: true });
-		const timeout = setTimeout(() => {
-			onPanComplete();
-		}, 300);
-
-		return () => clearTimeout(timeout);
-	}, [position, map, onPanComplete]);
+	}, [position, map]);
 
 	return null;
 }
 
 export default function Map({ currentPosition, openPopupIndex }) {
 	const markerRefs = useRef([]);
-	const [isPanComplete, setIsPanComplete] = useState(false);
 
 	useEffect(() => {
-		if (isPanComplete && markerRefs.current[openPopupIndex]) {
+		if (markerRefs.current[openPopupIndex]) {
 			const marker = markerRefs.current[openPopupIndex];
 			if (marker) {
-				marker.openPopup();
+				setTimeout(() => {
+					marker.openPopup();
+				}, 300);
 			}
-			setIsPanComplete(false);
 		}
-	}, [isPanComplete, openPopupIndex]);
-
-	const handlePanComplete = () => {
-		setIsPanComplete(true);
-	};
+	}, [openPopupIndex]);
 
 	return (
 		<MapContainer center={currentPosition} zoom={16}>
@@ -66,10 +57,7 @@ export default function Map({ currentPosition, openPopupIndex }) {
 				maxZoom={20}
 				subdomains={["a", "b", "c", "d"]}
 			/>
-			<MapPan
-				position={currentPosition}
-				onPanComplete={handlePanComplete}
-			/>
+			<MapPan position={currentPosition} />
 			{markers.map((marker, index) => (
 				<Marker
 					key={index}
