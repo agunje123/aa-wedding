@@ -1,4 +1,5 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { useEffect } from "react";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
 
 import "./Map.css";
@@ -26,17 +27,28 @@ const markers = [
 	},
 ];
 
-export default function Map() {
+function MapPan({ position }) {
+	const map = useMap();
+
+	useEffect(() => {
+		map.setView(position, map.getZoom());
+	}, [position, map]);
+
+	return null;
+}
+
+export default function Map({ currentPosition }) {
 	return (
-		<MapContainer center={markers[0].geocode} zoom={16}>
+		<MapContainer center={currentPosition} zoom={16}>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
 				url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
 				maxZoom={20}
 				subdomains={["a", "b", "c", "d"]}
 			/>
-			{markers.map((marker) => (
-				<Marker position={marker.geocode} icon={markerIcon}>
+			<MapPan position={currentPosition} />
+			{markers.map((marker, index) => (
+				<Marker key={index} position={marker.geocode} icon={markerIcon}>
 					<Popup>{marker.popUp}</Popup>
 				</Marker>
 			))}
