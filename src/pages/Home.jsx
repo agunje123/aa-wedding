@@ -8,8 +8,8 @@ export default function Home() {
 				<div className="background"></div>
 				<div className="title">
 					<h1>Antonija & Andrija</h1>
-					<span>25. 4. 2025.</span>
-					<span>
+					<span className="date">25. 4. 2025.</span>
+					<span className="timer">
 						<Timer />
 					</span>
 				</div>
