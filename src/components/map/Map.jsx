@@ -1,17 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { Icon } from "leaflet";
 
 import "./Map.css";
 import "leaflet/dist/leaflet.css";
 
-//TODO: zaminiti ikonicu
 const markerIcon = new Icon({
 	iconUrl: "https://unpkg.com/leaflet@1.5.1/dist/images/marker-icon.png",
 	iconSize: [25, 38],
 });
 
-//TODO: koordinate domjenka treba updateati
 const markers = [
 	{
 		geocode: [44.1110041, 15.2333336],
@@ -27,17 +25,39 @@ const markers = [
 	},
 ];
 
-function MapPan({ position }) {
+function MapPan({ position, onPanComplete }) {
 	const map = useMap();
 
 	useEffect(() => {
-		map.setView(position, map.getZoom());
-	}, [position, map]);
+		map.setView(position, map.getZoom(), { animate: true });
+		const timeout = setTimeout(() => {
+			onPanComplete();
+		}, 300);
+
+		return () => clearTimeout(timeout);
+	}, [position, map, onPanComplete]);
 
 	return null;
 }
 
-export default function Map({ currentPosition }) {
+export default function Map({ currentPosition, openPopupIndex }) {
+	const markerRefs = useRef([]);
+	const [isPanComplete, setIsPanComplete] = useState(false);
+
+	useEffect(() => {
+		if (isPanComplete && markerRefs.current[openPopupIndex]) {
+			const marker = markerRefs.current[openPopupIndex];
+			if (marker) {
+				marker.openPopup();
+			}
+			setIsPanComplete(false);
+		}
+	}, [isPanComplete, openPopupIndex]);
+
+	const handlePanComplete = () => {
+		setIsPanComplete(true);
+	};
+
 	return (
 		<MapContainer center={currentPosition} zoom={16}>
 			<TileLayer
@@ -46,9 +66,17 @@ export default function Map({ currentPosition }) {
 				maxZoom={20}
 				subdomains={["a", "b", "c", "d"]}
 			/>
-			<MapPan position={currentPosition} />
+			<MapPan
+				position={currentPosition}
+				onPanComplete={handlePanComplete}
+			/>
 			{markers.map((marker, index) => (
-				<Marker key={index} position={marker.geocode} icon={markerIcon}>
+				<Marker
+					key={index}
+					position={marker.geocode}
+					icon={markerIcon}
+					ref={(el) => (markerRefs.current[index] = el)}
+				>
 					<Popup>{marker.popUp}</Popup>
 				</Marker>
 			))}
