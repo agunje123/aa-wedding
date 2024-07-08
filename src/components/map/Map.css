@@ -2,3 +2,14 @@
 	height: 50vh;
 	width: 90vw;
 }
+
+.popup .leaflet-popup-tip,
+.popup .leaflet-popup-content-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 13rem;
+	font-size: 2rem;
+	background: var(--background);
+	color: var(--beige);
+}

@@ -65,7 +65,7 @@ export default function Map({ currentPosition, openPopupIndex }) {
 					icon={markerIcon}
 					ref={(el) => (markerRefs.current[index] = el)}
 				>
-					<Popup>{marker.popUp}</Popup>
+					<Popup className="popup">{marker.popUp}</Popup>
 				</Marker>
 			))}
 		</MapContainer>
