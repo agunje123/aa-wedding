@@ -1,15 +1,28 @@
 .stepper {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	padding: 2rem;
 	cursor: pointer;
 }
 
 .map {
 	display: flex;
-	justify-content: center
+	justify-content: center;
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.event_container {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
 }
 
 img {

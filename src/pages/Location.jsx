@@ -23,19 +23,34 @@ export default function Location() {
 			<h1>Di smo?</h1>
 			<div className="stepper" id="location">
 				<div
+					className="event_container"
 					onClick={() => handleIconClick([44.1110041, 15.2333336], 0)}
 				>
 					<img src={champagne} alt="Domjenak" />
+					<div className="description">
+						<header>Domjenak</header>
+						<main>Butler - 15:00</main>
+					</div>
 				</div>
 				<div
+					className="event_container"
 					onClick={() => handleIconClick([44.1134336, 15.2286381], 1)}
 				>
 					<img src={church} alt="Crkva" />
+					<div className="description">
+						<header>Crkva</header>
+						<main>Sveti Šime - 18:00</main>
+					</div>
 				</div>
 				<div
+					className="event_container"
 					onClick={() => handleIconClick([44.1374965, 15.3153856], 2)}
 				>
 					<img src={disco} alt="Sala" />
+					<div className="description">
+						<header>Sala</header>
+						<main>Divino - 20:00</main>
+					</div>
 				</div>
 			</div>
 			<div className="map">
