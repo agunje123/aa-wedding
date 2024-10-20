@@ -61,8 +61,10 @@ export default function Location() {
 
 	return (
 		<>
-			<h1 className="heading">Di smo?</h1>
-			<div className="stepper" id="location">
+			<h1 className="heading" id="location">
+				Di smo?
+			</h1>
+			<div className="stepper">
 				<button
 					onClick={handlePrevious}
 					disabled={currentIndex === 0}

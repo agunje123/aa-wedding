@@ -36,7 +36,7 @@ export default function Navbar() {
 							const about = document.querySelector("#about");
 							about.scrollIntoView({
 								behavior: "smooth",
-								block: "center",
+								block: "start",
 							});
 						}}
 					>
@@ -51,7 +51,7 @@ export default function Navbar() {
 								document.querySelector("#location");
 							location.scrollIntoView({
 								behavior: "smooth",
-								block: "center",
+								block: "start",
 							});
 						}}
 					>
