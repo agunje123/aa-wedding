@@ -1,4 +1,10 @@
 #about {
 	scroll-margin-top: 4.75rem;
-	height: 70vh;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
