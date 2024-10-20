@@ -7,7 +7,7 @@ const Timer = () => {
 	const [hours, setHours] = useState(0);
 	const [minutes, setMinutes] = useState(0);
 
-	const deadline = "April, 25, 2025";
+	const deadline = "April, 25, 2025 15:00:00";
 
 	const getTime = () => {
 		const time = Date.parse(deadline) - Date.now();
@@ -23,13 +23,12 @@ const Timer = () => {
 		return () => clearInterval(interval);
 	}, []);
 
-	//TODO: padezi
 	return (
 		<div className="timer">
-			<span id="day">{days < 10 ? "0" + days : days} dana</span>
-			<span id="hour">{hours < 10 ? "0" + hours : hours} sati</span>
+			<span id="day">{days < 10 ? "0" + days : days} d</span>
+			<span id="hour">{hours < 10 ? "0" + hours : hours} h</span>
 			<span id="minute">
-				{minutes < 10 ? "0" + minutes : minutes} minuta
+				{minutes < 10 ? "0" + minutes : minutes} min
 			</span>
 		</div>
 	);
