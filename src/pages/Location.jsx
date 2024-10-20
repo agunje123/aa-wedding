@@ -10,7 +10,7 @@ import "./styles/Location.css";
 export default function Location() {
 	const [openPopupIndex, setOpenPopupIndex] = useState(0);
 	const [currentPosition, setCurrentPosition] = useState([
-		44.1110041, 15.2333336,
+		44.1285473, 15.2158132,
 	]);
 
 	const handleIconClick = (geocode, index) => {
@@ -24,12 +24,12 @@ export default function Location() {
 			<div className="stepper" id="location">
 				<div
 					className="event_container"
-					onClick={() => handleIconClick([44.1110041, 15.2333336], 0)}
+					onClick={() => handleIconClick([44.1285473, 15.2158132], 0)}
 				>
 					<img src={champagne} alt="Domjenak" />
 					<div className="description">
 						<header className="heading">Domjenak</header>
-						<main>Butler - 15:00</main>
+						<main>Galija - 15:00</main>
 					</div>
 				</div>
 				<div
@@ -49,7 +49,7 @@ export default function Location() {
 					<img src={disco} alt="Sala" />
 					<div className="description">
 						<header className="heading">Sala</header>
-						<main>Divino - 20:00</main>
+						<main>Divino - 20:30</main>
 					</div>
 				</div>
 			</div>

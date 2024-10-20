@@ -12,12 +12,12 @@ const markerIcon = new Icon({
 
 const markers = [
 	{
-		geocode: [44.1110041, 15.2333336],
-		popUp: "Butler",
+		geocode: [44.1285473, 15.2158132],
+		popUp: "Restaurant Galija",
 	},
 	{
 		geocode: [44.1134336, 15.2286381],
-		popUp: "Sveti Šime",
+		popUp: "Crkva Svetog Šime",
 	},
 	{
 		geocode: [44.1374965, 15.3153856],
