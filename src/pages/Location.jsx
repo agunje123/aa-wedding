@@ -8,50 +8,89 @@ import disco from "../assets/disco-ball.png";
 import "./styles/Location.css";
 
 export default function Location() {
+	const locations = [
+		{
+			id: 0,
+			name: "Domjenak",
+			time: "Galija - 15:00",
+			coordinates: [44.1285473, 15.2158132],
+			img: champagne,
+		},
+		{
+			id: 1,
+			name: "Crkva",
+			time: "Sveti Šime - 18:00",
+			coordinates: [44.1134336, 15.2286381],
+			img: church,
+		},
+		{
+			id: 2,
+			name: "Sala",
+			time: "Divino - 20:30",
+			coordinates: [44.1374965, 15.3153856],
+			img: disco,
+		},
+	];
+
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const [openPopupIndex, setOpenPopupIndex] = useState(0);
-	const [currentPosition, setCurrentPosition] = useState([
-		44.1285473, 15.2158132,
-	]);
+	const [currentPosition, setCurrentPosition] = useState(
+		locations[currentIndex].coordinates
+	);
 
 	const handleIconClick = (geocode, index) => {
 		setCurrentPosition(geocode);
 		setOpenPopupIndex(index);
 	};
 
+	const handleNext = () => {
+		if (currentIndex < locations.length - 1) {
+			const newIndex = currentIndex + 1;
+			setCurrentIndex(newIndex);
+			handleIconClick(locations[newIndex].coordinates, newIndex);
+		}
+	};
+
+	const handlePrevious = () => {
+		if (currentIndex > 0) {
+			const newIndex = currentIndex - 1;
+			setCurrentIndex(newIndex);
+			handleIconClick(locations[newIndex].coordinates, newIndex);
+		}
+	};
+
 	return (
 		<>
 			<h1 className="heading">Di smo?</h1>
 			<div className="stepper" id="location">
-				<div
-					className="event_container"
-					onClick={() => handleIconClick([44.1285473, 15.2158132], 0)}
+				<button
+					onClick={handlePrevious}
+					disabled={currentIndex === 0}
+					className="nav-button left"
 				>
-					<img src={champagne} alt="Domjenak" />
+					&#9664; {/* Left arrow */}
+				</button>
+
+				<div className="event_container">
+					<img
+						src={locations[currentIndex].img}
+						alt={locations[currentIndex].name}
+					/>
 					<div className="description">
-						<header className="heading">Domjenak</header>
-						<main>Galija - 15:00</main>
+						<header className="heading">
+							{locations[currentIndex].name}
+						</header>
+						<main>{locations[currentIndex].time}</main>
 					</div>
 				</div>
-				<div
-					className="event_container"
-					onClick={() => handleIconClick([44.1134336, 15.2286381], 1)}
+
+				<button
+					onClick={handleNext}
+					disabled={currentIndex === locations.length - 1}
+					className="nav-button right"
 				>
-					<img src={church} alt="Crkva" />
-					<div className="description">
-						<header className="heading">Crkva</header>
-						<main>Sveti Šime - 18:00</main>
-					</div>
-				</div>
-				<div
-					className="event_container"
-					onClick={() => handleIconClick([44.1374965, 15.3153856], 2)}
-				>
-					<img src={disco} alt="Sala" />
-					<div className="description">
-						<header className="heading">Sala</header>
-						<main>Divino - 20:30</main>
-					</div>
-				</div>
+					&#9654; {/* Right arrow */}
+				</button>
 			</div>
 			<div className="map">
 				<Map
