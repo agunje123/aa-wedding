@@ -20,7 +20,7 @@ export default function Location() {
 
 	return (
 		<>
-			<h1>Di smo?</h1>
+			<h1 className="heading">Di smo?</h1>
 			<div className="stepper" id="location">
 				<div
 					className="event_container"
@@ -28,7 +28,7 @@ export default function Location() {
 				>
 					<img src={champagne} alt="Domjenak" />
 					<div className="description">
-						<header>Domjenak</header>
+						<header className="heading">Domjenak</header>
 						<main>Butler - 15:00</main>
 					</div>
 				</div>
@@ -38,7 +38,7 @@ export default function Location() {
 				>
 					<img src={church} alt="Crkva" />
 					<div className="description">
-						<header>Crkva</header>
+						<header className="heading">Crkva</header>
 						<main>Sveti Šime - 18:00</main>
 					</div>
 				</div>
@@ -48,7 +48,7 @@ export default function Location() {
 				>
 					<img src={disco} alt="Sala" />
 					<div className="description">
-						<header>Sala</header>
+						<header className="heading">Sala</header>
 						<main>Divino - 20:00</main>
 					</div>
 				</div>

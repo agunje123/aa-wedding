@@ -17,7 +17,7 @@ export default function Navbar() {
 	return (
 		<nav className={color ? "nav nav-bg" : "nav"}>
 			<div
-				className="site_name"
+				className="site_name heading"
 				onClick={() => {
 					const home = document.querySelector("#home");
 					home.scrollIntoView({
@@ -31,6 +31,7 @@ export default function Navbar() {
 			<ul>
 				<li>
 					<div
+						className="heading"
 						onClick={() => {
 							const about = document.querySelector("#about");
 							about.scrollIntoView({
@@ -44,6 +45,7 @@ export default function Navbar() {
 				</li>
 				<li>
 					<div
+						className="heading"
 						onClick={() => {
 							const location =
 								document.querySelector("#location");
