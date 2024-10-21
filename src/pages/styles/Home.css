@@ -28,6 +28,7 @@ h1 {
 .welcome {
 	height: 100vh;
 	display: flex;
+	margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
