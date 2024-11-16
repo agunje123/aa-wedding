@@ -1,27 +1,38 @@
 import "./styles/About.css";
+import andrija from "../assets/andrija.png";
+import antonija from "../assets/antonija.png";
+import mihi from "../assets/mihi.png";
+import tomo from "../assets/tomo.png";
+import garo from "../assets/garo.png";
 
 import InfoCard from "../components/info-card/InfoCard";
 
 const people = [
 	{
-		image: "src/assets/aa.png",
-		name: "Andrija i Antonija",
-		description: "Show",
+		image: andrija,
+		name: "Andrija",
+		description: '"Volim duge šetnje plažama i igre upoznavanja!"',
 	},
 	{
-		image: "src/assets/tomo.png",
+		image: antonija,
+		name: "Antonija",
+		description: '"Umorna sam više od šetnji plažama."',
+	},
+	{
+		image: tomo,
 		name: "Tomislav",
-		description: "HŽV",
+		description: '"Nadan se da će svirat Dražen Žanko i Vinko Coce. HŽV!"',
 	},
 	{
-		image: "src/assets/mihi.png",
+		image: mihi,
 		name: "Mihaela",
-		description: "Garo lover",
+		description:
+			'"Od hobija najdraži su mi mijenjanje posla i kritiziranje kolača."',
 	},
 	{
-		image: "src/assets/garo.png",
+		image: garo,
 		name: "Garo",
-		description: "Meow",
+		description: '"Meow."',
 	},
 ];
 
