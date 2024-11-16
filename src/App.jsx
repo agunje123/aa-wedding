@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Location from "./pages/Location";
-import Footer from "./components/footer/Footer";
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Location from "./sections/Location";
+import Footer from "./sections/Footer";
 import { useIntersectionObserver } from "./hooks/IntersectionObserver.hook";
 
 function App() {

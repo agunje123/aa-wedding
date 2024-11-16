@@ -40,7 +40,7 @@ export default function About() {
 	return (
 		<>
 			<h1 id="about" className="heading">
-				About
+				Ko ste vi uopće?
 			</h1>
 			<div className="cards">
 				{people.map((person, index) => (
