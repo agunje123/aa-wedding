@@ -21,7 +21,7 @@ const people = [
 	{
 		image: tomo,
 		name: "Tomislav",
-		description: '"Nadan se da će svirat Dražen Žanko i Vinko Coce. HŽV!"',
+		description: '"Nadam se da će svirati Dražen Žanko i Vinko Coce. HŽV!"',
 	},
 	{
 		image: mihi,

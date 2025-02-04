@@ -5,6 +5,7 @@ import champagne from "../assets/champagne.png";
 import church from "../assets/church.png";
 import disco from "../assets/disco-ball.png";
 import menuPDF from "../assets/menu.pdf";
+import invitationPDF from "../assets/invitation.pdf";
 
 import "./styles/Location.css";
 
@@ -60,10 +61,10 @@ export default function Location() {
 		}
 	};
 
-	const handleDownload = () => {
+	const handleDownload = (fileName) => {
 		const link = document.createElement("a");
-		link.href = menuPDF;
-		link.download = "menu.pdf";
+		link.href = fileName === "menu" ? menuPDF : invitationPDF;
+		link.download = fileName;
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
@@ -110,8 +111,14 @@ export default function Location() {
 					openPopupIndex={openPopupIndex}
 				/>
 			</div>
-			<div onClick={handleDownload} className="download">
-				Preuzmite jelovnik - da ne bude iznenađenja
+			<div onClick={() => handleDownload("menu")} className="download">
+				Preuzmite jelovnik - da ne bude iznenađenja!
+			</div>
+			<div
+				onClick={() => handleDownload("invitation")}
+				className="download"
+			>
+				Preuzmite ekološki prihvatljivu pozivnicu!
 			</div>
 		</>
 	);
