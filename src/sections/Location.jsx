@@ -28,7 +28,7 @@ export default function Location() {
 		{
 			id: 2,
 			name: "Sala",
-			time: "Divino - 20:30",
+			time: "Divino - 20:00",
 			coordinates: [44.1374965, 15.3153856],
 			img: disco,
 		},
