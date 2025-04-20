@@ -31,9 +31,14 @@ const Timer = () => {
 	return (
 		<div className="timer">
 			{isTimeUp ? (
-				<button className="button_upload">
-					Počastite nas svojim slikama!
-				</button>
+				<a
+					href="https://drive.google.com/drive/folders/1-cAiN3bYqR2nc-w56uJS3Zr3s4xtCHNg?usp=sharing"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="button_upload"
+				>
+					Počastite nas svojim slikama
+				</a>
 			) : (
 				<>
 					<span id="day">{days < 10 ? "0" + days : days} d</span>
