@@ -8,7 +8,7 @@ const Timer = () => {
 	const [minutes, setMinutes] = useState(0);
 	const [isTimeUp, setIsTimeUp] = useState(false);
 
-	const deadline = "April, 18, 2025 16:00:00";
+	const deadline = "April, 25, 2025 16:00:00";
 
 	const getTime = () => {
 		const time = Date.parse(deadline) - Date.now();
@@ -37,7 +37,7 @@ const Timer = () => {
 					rel="noopener noreferrer"
 					className="button_upload"
 				>
-					Počastite nas svojim slikama
+					Podijelite s nama svoje uspomene!
 				</a>
 			) : (
 				<>
